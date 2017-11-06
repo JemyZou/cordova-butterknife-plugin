@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.bk"
+    version="0.0.1">
+
+    <name>ButterKnife Plugin</name>
+    
+    <description>ButterKnife Plugin.</description>
+
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>    
+
+    <license>PHOENIX</license>
+
+    <!-- android -->
+    <platform name="android">
+	
+        <js-module src="www/bk.js" name="bk">
+            <clobbers target="plugins.bk" />
+        </js-module>
+
+		<!--hook src="scripts/cordova-classpath-deps-fix.js" type="before_prepare" />-->
+		
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="BKPlugin">
+                <param name="android-package" value="com.tts.bk.BKPlugin" />
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml" />
+
+        <framework src="src/android/bk.gradle" custom="true" type="gradleReference" />      
+		
+        <source-file src="src/android/BKPlugin.java" target-dir="src/com/tts/bk" />
+
+       <edit-config file="AndroidManifest.xml" target="/manifest/application" mode="merge">
+          <application android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        </edit-config>
+		
+		<!--<edit-config file="build.gradle" target="/buildscript/repositories" mode="merge">
+          <name="repositories" value="mavenCentral()"></repositories>
+        </edit-config>-->
+		
+        <framework src="src\android\libs\bkmodule" custom="true" />
+        
+    </platform>
+
+    <!-- ios -->
+    <platform name="ios">
+		
+        <config-file target="config.xml" parent="/*">
+            <feature name="PowerUpPlugin">
+                 <param name="ios-package" value="PowerUpPlugin" />
+             </feature>
+        </config-file>
+
+		<header-file src="src/ios/PowerUpPlugin.h"/>
+        <source-file src="src/ios/PowerUpPlugin.m"/>
+
+        <framework src="LeaderPowerUpLibrary.framework" />
+
+        <js-module src="www/powerupplugin.js" name="powerupplugin">
+	        <clobbers target="plugins.powerupplugin" />
+	    </js-module>
+
+    </platform>
+
+
+</plugin>

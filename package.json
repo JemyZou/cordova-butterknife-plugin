@@ -1,0 +1,36 @@
+{
+  "name": "powerup",
+  "version": "0.0.1",
+  "description": "This plugin is Powerup app.",
+  "cordova": {
+    "id": "powerup",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "repository": {
+   
+  },
+  "keywords": [
+    "cordova-powerup",
+    "cordova-powerup-android",
+    "cordova-powerup-ios"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=4.0.0"
+    },
+    {
+      "name": "cordova-android",
+      "version": ">=4"
+    },
+    {
+      "name": "cordova-plugman",
+      "version": ">=4.2.0"
+    }
+  ],
+  "author": "ttsteam",
+  "license": "MIT"
+}
