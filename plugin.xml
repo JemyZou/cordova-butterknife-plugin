@@ -41,7 +41,7 @@
           <name="repositories" value="mavenCentral()"></repositories>
         </edit-config>-->
 		
-        <framework src="src\android\libs\bkmodule" custom="true" />
+        <framework src="src/android/libs/bkmodule" custom="true" />
         
     </platform>
 
